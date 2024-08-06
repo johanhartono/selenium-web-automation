@@ -11,12 +11,16 @@ public class selenium {
 
     @Test
     public void helloJayJay() {
-        //System.out.println("Test");
+        //1. Initialization
         WebDriver driver = WebDriverManager.chromedriver().create();
         driver.get("https://jayjay.co/");
-       // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        //Web Element
         String text = driver.findElement(By.className("btn-kursus")).getText();
         assertEquals("Kursus",text);
+
+        //Methods
+        driver.quit();
 
     }
 }
